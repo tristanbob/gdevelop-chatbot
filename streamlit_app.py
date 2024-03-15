@@ -64,7 +64,9 @@ index = load_data()
 
 if "chat_engine" not in st.session_state.keys():  # Initialize the chat engine
     st.session_state.chat_engine = index.as_chat_engine(
-        chat_mode="condense_question", verbose=True
+        chat_mode="openai",
+        verbose=True,
+        # chat_mode="condense_question", verbose=True
     )
 
 if prompt := st.chat_input(
